@@ -1,5 +1,9 @@
 # SpeakCast
 
+![macOS 14.2+](https://img.shields.io/badge/macOS-14.2%2B-black?logo=apple)
+![Swift 5](https://img.shields.io/badge/Swift-5-orange?logo=swift)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A tiny macOS menu bar app that plays your Mac's audio through **several outputs at once, in sync**. Combine your speakers, Bluetooth headphones, an HDMI display and a USB DAC, then fine-tune each output's delay, volume and channel mode.
 
 ## Features
@@ -31,12 +35,16 @@ A tiny macOS menu bar app that plays your Mac's audio through **several outputs 
 
 ## Install
 
-Download or clone this repository, then run:
+Clone the repository and run the build script:
 
 ```bash
+git clone https://github.com/SpeakCast/SpeakCast.git
+cd SpeakCast
 chmod +x build.sh
 ./build.sh
 ```
+
+You can also download the repository as a ZIP from GitHub instead of cloning it.
 
 The script compiles the app with `swiftc`, ad-hoc signs it, installs it to `~/Applications/SpeakCast.app` and launches it. Running it again rebuilds and replaces the installed copy.
 
@@ -110,6 +118,14 @@ defaults delete com.matinalijani.speakcast   # optional: clears saved settings
 | `SpeakCast.swift` | The whole app: Core Audio helpers, real-time router, manager and SwiftUI interface |
 | `build.sh` | Compiles, signs, installs and launches the app |
 | `LICENSE` | MIT license |
+| `.gitignore` | Keeps macOS, Xcode and build files out of git |
+
+## Contributing
+
+Contributions are very welcome: bug reports, ideas and pull requests.
+
+- **Found a bug or have an idea?** [Open an issue](https://github.com/SpeakCast/SpeakCast/issues). For bugs, include your macOS version, the output devices you used and the status line text shown at the bottom of the SpeakCast window.
+- **Want to change the code?** Fork the repository, create a branch, run `./build.sh` to make sure it builds and works with your outputs, then open a pull request describing what you changed and why.
 
 ## License
 
@@ -121,5 +137,3 @@ Released under the [MIT License](LICENSE).
 
 - Email: [matin.alijani@gmail.com](mailto:matin.alijani@gmail.com)
 - LinkedIn: [linkedin.com/in/matin-alijani](https://www.linkedin.com/in/matin-alijani/)
-
-Issues and pull requests are welcome.
